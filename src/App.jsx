@@ -56,7 +56,7 @@ function App() {
         {
           path : "/details/:id",
           element : <PrivateRouter><Details></Details></PrivateRouter>,
-          loader : ({params}) => fetch(`http://localhost:5000/${params.id}`)
+          loader : ({params}) => fetch(`https://server-event-academia.vercel.app/${params.id}`)
         },
         {
           path : "/event",

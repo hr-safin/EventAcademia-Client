@@ -4,7 +4,8 @@ import { AuthProvider } from "../AuthContext/AuthContext";
 import AllCart from "./AllCart";
 import HashLoader from "react-spinners/HashLoader";
 import UseAxiosSecure from "../Hook/UseAxiosSecure";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Cart = () => {
   const [isLoading, setLoading] = useState("loading");
   window.scrollTo(0, 0);
@@ -24,13 +25,23 @@ const Cart = () => {
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/cart/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(data => {
+    axiosSecure.delete(`/cart/${id}`)
+      .then(res => {
+        console.log(res.data)
         const deleted = shoppingCart.filter((item) => item._id !== id);
         setCart(deleted);
+        if(res.data.deletedCount > 0){
+            toast.success("Remove From The Cart", {
+              position: "top-center",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+           }
       });
   };
   return isLoading ? (
@@ -56,6 +67,7 @@ const Cart = () => {
           />
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 };

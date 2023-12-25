@@ -82,9 +82,7 @@ useEffect(() => {
           
           setUser(null )
           window.location.reload()
-          // setTimeout(() => {
-          //   navigate('/login')
-          // }, 2000);
+        
       })
       .catch();
 
@@ -94,7 +92,7 @@ useEffect(() => {
 
   return (
     <div className=" fixed z-50 border-b border-gray-200  bg-white dark:bg-slate-900  w-full py-4 lg:px-20  dark:border-b dark:border-gray-700  px-4 flex justify-between items-center  text-black  ">
-      <h2 className=" text-2xl sm:text-3xl md:text-3xl font-medium ">
+      <h2 className=" text-2xl sm:text-3xl md:text-3xl font-bold ">
         <Link to="/">
           <span className=" dark:text-white">Event </span><span className=" text-indigo-600">Academia</span>
         </Link>
@@ -216,8 +214,6 @@ useEffect(() => {
                 <img
                   src={
                     user.photoURL
-                      // ? user.photoURL
-                      // : "https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png"
                   }
                 />
               </div>
@@ -264,7 +260,7 @@ useEffect(() => {
         ) : (
           <Link
             to="/login"
-            className=" hover:bg-indigo-700 border border-indigo-600 text-gray-800 dark:text-gray-400 hover:border hover:text-white lg:mr-3 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+            className=" hover:bg-indigo-700 border-2 border-indigo-600 text-gray-800 dark:text-gray-400 hover:border-2 hover:text-white lg:mr-3 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
           >
             Login
           </Link>

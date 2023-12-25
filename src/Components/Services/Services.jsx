@@ -27,20 +27,13 @@ const Services = () => {
         </h2>
       </div>
 
-      <div className=" flex justify-end lg:px-28 px-6 pt-16 pb-8">
-        <div className="dropdown dropdown-end ">
-          <label tabIndex={0} className=" bg-indigo-700 text-white  px-4 py-3 rounded-lg cursor-pointer m-1">
-            Sort By Price
-          </label>
-          
-        </div>
-      </div>
+      
       {isLoading ? (
         <div>
           <SkeletonService />
         </div>
       ) : (
-        <div className="lg:px-28 dark:bg-slate-900 px-6 pt-8 pb-16 bg-white place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className="lg:px-28 dark:bg-slate-900 px-6 pt-28 pb-16 bg-white place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {display.map((data) => (
             <ServiceCard data={data} key={data.id} />
           ))}

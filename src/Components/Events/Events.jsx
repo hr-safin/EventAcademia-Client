@@ -8,7 +8,7 @@ const Events = () => {
     const [event, setEvent] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/newEvents")
+        axios.get("https://server-event-academia.vercel.app/newEvents")
         .then(res => {
             console.log(res.data)
             setEvent(res.data)
