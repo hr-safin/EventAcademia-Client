@@ -45,30 +45,7 @@ const AuthContext = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-
-      const loggedUser = { email: currentUser?.email };
-
       setLoading(false);
-
-      if (currentUser) {
-        axios
-          .post("http://localhost:5000/jwt", loggedUser, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            console.log(res.data);
-          });
-      }
-
-      else{
-        axios
-          .post("http://localhost:5000/logout", loggedUser, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            console.log(res.data);
-          });
-      }
     });
 
     return () => {

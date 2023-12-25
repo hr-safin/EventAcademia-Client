@@ -3,24 +3,20 @@ import ServiceCard from "./ServiceCard";
 import axios from "axios";
 import HashLoader from "react-spinners/HashLoader";
 import SkeletonService from "./SkeletonService";
+import UseAxiosSecure from "../Hook/UseAxiosSecure";
 const Services = () => {
 //   window.scrollTo(0, 0);
   const [display, setDisplay] = useState([]);
   const [isLoading, setLoading] = useState("loading");
-  
-  const [asen, setAsen] = useState(true)
-
+  const axiosSecure = UseAxiosSecure()
   useEffect(() => {
-    // fetch("education.json")
-    // .then(res => res.json())
-    // .then(data => setDisplay(data))
-    axios.get(`http://localhost:5000/events?sort=${asen ? "asen" : "desen"}`)
-    .then((res) => {
+    axiosSecure.get("/events")
+    .then(res => {
       console.log(res.data);
       setDisplay(res.data);
       setLoading(false);
     });
-  }, [asen]);
+  }, []);
 
   console.log(display);
   return (
@@ -36,17 +32,7 @@ const Services = () => {
           <label tabIndex={0} className=" bg-indigo-700 text-white  px-4 py-3 rounded-lg cursor-pointer m-1">
             Sort By Price
           </label>
-          <ul
-            tabIndex={0}
-            className="dropdown-content z-[4] mt-4 menu p-2 shadow bg-slate-200 text-gray-800 rounded-box w-52"
-          >
-            <li onClick={() => setAsen(!asen)}>
-              <a>{asen ? "High to Low" : "Low to High"}</a>
-            </li>
-            {/* <li>
-              <a>High to Low</a>
-            </li> */}
-          </ul>
+          
         </div>
       </div>
       {isLoading ? (

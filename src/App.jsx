@@ -56,7 +56,7 @@ function App() {
         {
           path : "/details/:title",
           element : <PrivateRouter><Details></Details></PrivateRouter>,
-          loader : ({params}) => fetch(`http://localhost:5000/events/${params.title}`)
+          loader : ({params}) => fetch(`http://localhost:5000/${params.title}`)
         },
         {
           path : "/event",

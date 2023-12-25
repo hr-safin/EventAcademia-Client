@@ -15,9 +15,9 @@ const DetailsBlog = () => {
     const matchedBlog = loader.find(item => item.id === parseInt(id))
     console.log(matchedBlog)
     return (
-        <div className=' card lg:w-[85%] py-32 lg:px-24 px-6  mx-auto'>
-            <img className=' rounded-lg' src={matchedBlog.blogImage} alt={matchedBlog.id} />
-            <div className=' p-4 lg:p-6'>
+        <div className=' bg-white dark:bg-slate-900 card w-full py-32 lg:px-24 px-6  mx-auto'>
+            <img className=' md:w-[80%] mx-auto  rounded-lg' src={matchedBlog.blogImage} alt={matchedBlog.id} />
+            <div className=' md:w-[80%] mx-auto p-4 lg:p-6'>
                 <div className=' flex items-center gap-16 text-gray-700'>
 
                     <div className=' flex items-center gap-2'>

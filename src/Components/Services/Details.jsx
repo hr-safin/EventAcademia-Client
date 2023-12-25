@@ -7,27 +7,13 @@ const Details = () => {
   const {user} = useContext(AuthProvider)
   const [isLoading, setLoading] = useState("loading")
   window.scrollTo(0,0)
-  // const {data} = useParams();
-  // console.log(data)
-  
-
-  // useEffect(() => {
-  //   axios(`http://localhost:5000/events/${id}`)
-  //   .then(res => {
-  //     console.log(res.data)
-  //     setDetail(res.data)
-  //   })
-  // }, [])
-
 const [details, setDetail] = useState([])
-  const {title} = useParams()
-  console.log(title)
-  const navigate = useNavigate()
+  const {id} = useParams()
   useEffect(() => {
-    axios("http://localhost:5000/events")
+    axios.get(`http://localhost:5000/${id}`)
     .then(res => {
       console.log(res.data)
-      const matchedData = res.data.find((item) => item.title === title);
+      const matchedData = res.data.find((item) => item._id === id);
       console.log(matchedData)
       setDetail(matchedData)
       setLoading(false)
