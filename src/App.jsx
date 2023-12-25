@@ -19,7 +19,6 @@ import Error from "./Components/Error/Error";
 import Events from "./Components/Events/Events";
 import Blogs from "./Components/Blogs/Blogs";
 import DetailsBlog from "./Components/Blogs/DetailsBlog";
-import AnimatedRoute from "./Components/AnimatedRoute";
 import ScrollToTop from "./Components/ScrollToTop";
 import HashLoader from "react-spinners/HashLoader";
 import { useEffect, useState } from "react";

@@ -65,7 +65,7 @@ const Registration = () => {
       .catch((error) => setError(error.message));
   };
   return (
-    <div className=" pt-24 lg:pt-28 lg:pb-10 bg-white text-gray-800 dark:bg-slate-900">
+    <div className=" md:py-24 py-40 lg:pt-28 lg:pb-10 bg-white text-gray-800 dark:bg-slate-900">
       <section>
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full dark:bg-slate-900rounded-lg border dark:border dark:border-gray-700 md:mt-0 sm:max-w-md xl:p-0  ">
