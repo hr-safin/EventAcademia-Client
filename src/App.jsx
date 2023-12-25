@@ -54,9 +54,9 @@ function App() {
           element : <Services />
         },
         {
-          path : "/details/:title",
+          path : "/details/:id",
           element : <PrivateRouter><Details></Details></PrivateRouter>,
-          loader : ({params}) => fetch(`http://localhost:5000/${params.title}`)
+          loader : ({params}) => fetch(`http://localhost:5000/${params.id}`)
         },
         {
           path : "/event",

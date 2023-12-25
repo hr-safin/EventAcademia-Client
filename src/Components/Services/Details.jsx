@@ -3,14 +3,19 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthProvider } from "../AuthContext/AuthContext";
 import HashLoader from "react-spinners/HashLoader";
+import UseAxiosSecure from "../Hook/UseAxiosSecure";
+
+
 const Details = () => {
   const {user} = useContext(AuthProvider)
   const [isLoading, setLoading] = useState("loading")
+  const axiosSecure = UseAxiosSecure()
   window.scrollTo(0,0)
 const [details, setDetail] = useState([])
   const {id} = useParams()
+  console.log(id)
   useEffect(() => {
-    axios.get(`http://localhost:5000/${id}`)
+    axiosSecure.get("/events")
     .then(res => {
       console.log(res.data)
       const matchedData = res.data.find((item) => item._id === id);
@@ -30,15 +35,8 @@ const [details, setDetail] = useState([])
 
     const cartInfo = {email, eventImage, eventName, eventPrice, eventDetails}
 
-    fetch("http://localhost:5000/cart", {
-      method : "POST",
-      headers : {
-        "content-type" : "application/json"
-      },
-      body : JSON.stringify(cartInfo)
-    })
-    .then(res => res.json())
-    .then(data => {
+    axiosSecure.post("/cart", cartInfo)
+    .then(res => {
       console.log(data)
       alert("added to cart")
     })
