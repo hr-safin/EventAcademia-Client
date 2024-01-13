@@ -1,6 +1,5 @@
 import React from 'react';
 import "./index.css"
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
@@ -8,10 +7,7 @@ import Skeleton from '@mui/material/Skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 const SkeletonService = () => {
 
-    // const array = new Array(10).fill("safin")
-    // array.map((el) => {
-    //     console.log(el)
-    // })
+    
 
    
 

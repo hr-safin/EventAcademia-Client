@@ -3,9 +3,9 @@ import React from 'react';
 const Contact = () => {
     window.scrollTo(0,0)
     return (
-        <div   className=' '>
-            <section className="bg-white dark:lg:py-0 dark:py-20 lg:py-0 py-24  dark:bg-slate-900 ">
-  <div className="py-8 lg:py-36 px-4 mx-auto max-w-screen-md">
+        <div  className=' '>
+       <section className="bg-white dark:lg:py-0 dark:py-20 lg:py-0 py-24  dark:bg-slate-900 ">
+      <div className="py-8 lg:py-36 px-4 mx-auto max-w-screen-md">
       <h2 className="mb-4  text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-gray-500 ">Contact Us</h2>
       <p className="mb-8 lg:mb-12 font-light text-center text-gray-500  sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
       <form action="#" className="space-y-6">
