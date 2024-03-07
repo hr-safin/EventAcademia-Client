@@ -4,7 +4,7 @@ import {TiTick } from "react-icons/ti"
 const About = () => {
     return (
         <div 
-        className=' bg-whit5  dark:bg-slate-900 lg:py-0 py-20   dark:mx-0 lg:mt-0 dark:mt-0 lg:mb-0 dark:mb-0   px-6 lg:pl-32 lg:pr-10 lg:h-[100vh] md:px-10 flex flex-col lg:flex-row-reverse justify-center gap-16 md:gap-20 lg:gap-16'>
+        className=' bg-white  dark:bg-slate-900 lg:py-0 py-20   dark:mx-0 lg:mt-0 dark:mt-0 lg:mb-0 dark:mb-0   px-6 lg:pl-32 lg:pr-10 lg:h-[100vh] md:px-10 flex flex-col lg:flex-row-reverse justify-center gap-16 md:gap-20 lg:gap-16'>
             <div  className=' '>
                 <button className=' font-mono text-lg tracking-widest text-indigo-600 font-bold mb-4'>ABOUT US</button>
                 <h2 className='text-3xl lg:text-5xl font-bold text-gray-800 dark:text-gray-400'>Welcome to  <br /> Event  Academia</h2>
