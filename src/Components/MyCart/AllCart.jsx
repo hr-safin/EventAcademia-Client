@@ -1,6 +1,6 @@
 import React from 'react';
 import {TiTick } from "react-icons/ti"
-const AllCart = ({data,handleDelet}) => {
+const AllCart = ({data,handleDelete}) => {
     return (
         <div className="card bg-white dark:bg-slate-900 sm:card-side w-full lg:w-[850px] lg:h-[200px]  border-2 dark:border-gray-800">
         
